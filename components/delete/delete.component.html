@@ -1,0 +1,19 @@
+<!-- delete.component.html -->
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Unit Name</label>
+        <input type="text" class="form-control" name="unit_name" formControlName="unit_name" #unit_name [(ngModel)] = "adunit.unit_name"/>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Unit Price</label>
+        <input type="text" class="form-control" name="unit_price" formControlName="unit_price" #unit_price [(ngModel)] = "adunit.unit_price"/>
+      </div>
+      <div class="form-group">
+        <button (click)="updateAdUnit(unit_name.value, unit_price.value)" [disabled]="angForm.invalid" class="btn btn-primary">Update Unit</button>
+      </div>
+    </form>
+  </div>
+</div>
